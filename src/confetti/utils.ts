@@ -1,4 +1,4 @@
-import isEqual from 'lodash/isEqual';
+import { isEqual } from 'radashi'
 
 type Rotate3dTransform = [number, number, number];
 
@@ -29,3 +29,8 @@ export const rotationTransforms: Rotate3dTransform[] = [
 export const shouldBeCircle = (rotationIndex: number) => {
   return !isEqual(rotationTransforms[rotationIndex], zAxisRotation) && coinFlip();
 };
+
+export const round = (num: number, precision: number) => {
+  const modifier = 10 ** precision
+  return Math.round(num * modifier) / modifier
+}

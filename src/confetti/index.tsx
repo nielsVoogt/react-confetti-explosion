@@ -1,7 +1,8 @@
 import * as React from 'react';
-import range from 'lodash/range';
-import { createPortal } from 'react-dom';
+
 import useStyles, { IParticle, IStyleClasses } from './styles';
+
+import { createPortal } from 'react-dom';
 
 const FORCE = 0.5; // 0-1 roughly the vertical force at which particles initially explode
 const SIZE = 12; // max height for particle rectangles, diameter for particle circles
@@ -25,7 +26,7 @@ export interface ConfettiProps extends Omit<React.HTMLAttributes<HTMLDivElement>
 
 const createParticles = (count: number, colors: string[]): IParticle[] => {
   const increment = 360 / count;
-  return range(count).map(index => ({
+  return Array.from({ length: count }, (_, i) => i).map(index => ({
     color: colors[index % colors.length],
     degree: increment * index,
   }));

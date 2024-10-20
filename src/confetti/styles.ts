@@ -1,7 +1,6 @@
-import { createUseStyles } from 'react-jss';
-import round from 'lodash/round';
+import { coinFlip, mapRange, rotate, rotationTransforms, round, shouldBeCircle } from './utils';
 
-import { coinFlip, mapRange, rotate, rotationTransforms, shouldBeCircle } from './utils';
+import { createUseStyles } from 'react-jss';
 
 const ROTATION_SPEED_MIN = 200; // minimum possible duration of single particle full rotation
 const ROTATION_SPEED_MAX = 800; // maximum possible duration of single particle full rotation
