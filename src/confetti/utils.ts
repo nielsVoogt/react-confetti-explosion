@@ -1,4 +1,3 @@
-import { isEqual } from 'radashi'
 
 type Rotate3dTransform = [number, number, number];
 
@@ -27,7 +26,7 @@ export const rotationTransforms: Rotate3dTransform[] = [
 ];
 
 export const shouldBeCircle = (rotationIndex: number) => {
-  return !isEqual(rotationTransforms[rotationIndex], zAxisRotation) && coinFlip();
+  return !(JSON.stringify(rotationTransforms[rotationIndex]) === JSON.stringify(zAxisRotation)) && coinFlip();
 };
 
 export const round = (num: number, precision: number) => {
